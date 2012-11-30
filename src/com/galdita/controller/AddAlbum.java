@@ -36,6 +36,7 @@ public class AddAlbum extends Activity {
 
 	// Penampung sementara deskripsi album
 	private String albumDesc = "Default";
+	private String yola="";
 	
 	// Penampung sementara marker album
 	static String albumMarker = "Default";
