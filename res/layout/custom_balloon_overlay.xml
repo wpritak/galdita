@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/balloon_main_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/balloon_overlay_bg_selector"
+    android:minWidth="200dp"
+    android:orientation="horizontal"
+    android:paddingBottom="25dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="0dp" >
+
+    <!-- your click region must be some sort of layout container using @id/balloon_inner_layout -->
+
+    <RelativeLayout
+        android:id="@id/balloon_inner_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/balloon_item_image"
+            android:layout_width="50dp"
+            android:layout_height="64dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/desc"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/icon" />
+
+        <TextView
+            android:id="@+id/balloon_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/balloon_item_image"
+            android:text="@string/balloon_item_title"
+            android:textColor="@android:color/primary_text_light"
+            android:paddingTop="10dp"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/balloon_item_snippet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/balloon_item_title"
+            android:layout_alignLeft="@+id/balloon_item_title"
+            android:text="@string/balloon_item_snippet"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@id/balloon_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/desc"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:src="@drawable/balloon_overlay_close" />
+
+</LinearLayout>

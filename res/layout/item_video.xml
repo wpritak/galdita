@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/nama_foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="7dip"
+            android:text="Tornado"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="30sp"
+            android:typeface="serif" />
+        
+        
+
+        <ImageButton
+            android:id="@+id/edit_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0"
+            android:clickable="true"
+            android:gravity="right"
+            android:onClick="TextViewClicked"
+            android:src="@drawable/edit" />
+
+        <ImageButton
+            android:id="@+id/remove_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0"
+            android:gravity="right"
+            android:onClick="remove"
+            android:src="@drawable/trash" />
+
+        <ImageButton
+            android:id="@+id/close_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="0"
+            android:background="@drawable/close"
+            android:scaleType="fitXY"
+            android:gravity="right"
+            android:onClick="close" />
+    </LinearLayout>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scoll1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/foto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:maxHeight="250dp"
+                    android:onClick="showMenuScreen"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:adjustViewBounds="true" />
+                
+                <ImageView
+                    android:id="@+id/video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:maxHeight="250dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:onClick="playVideo"
+                    android:adjustViewBounds="true" />
+
+                <ViewSwitcher
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/my_switcher"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp"
+                    android:background="@android:color/background_light"
+                    android:minHeight="80dp"
+                    android:clickable="true"
+                    android:onClick="TextViewClicked" >
+                    <TextView
+                        android:id="@+id/clickable_text_view"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:clickable="true"
+                        android:drawablePadding="5dp"
+                        android:gravity="top"
+                        android:scrollHorizontally="true"
+                        android:scrollbars="vertical"
+                        android:textColor="@android:color/black"
+                        android:onClick="TextViewClicked" />
+
+                    <EditText
+                        android:id="@+id/caption"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:hint="@string/caption"
+                        android:minLines="3"
+                        android:inputType="textMultiLine"
+                        android:scrollHorizontally="true"
+                        android:scrollbars="vertical" />
+                </ViewSwitcher>
+            </LinearLayout>
+
+<!--             <LinearLayout -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:orientation="horizontal" > -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/size" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignParentBottom="true" -->
+<!--                     android:layout_alignParentLeft="true" -->
+<!--                     android:layout_below="@+id/foto" -->
+<!--                     android:layout_weight="1" -->
+<!--                     android:paddingLeft="25dip" -->
+<!--                     android:paddingTop="15dip" -->
+<!--                     android:text="Size : 3 MB" -->
+<!--                     android:textSize="18sp" -->
+<!--                     android:typeface="serif" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/tanggal" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignParentBottom="true" -->
+<!--                     android:layout_alignRight="@+id/foto" -->
+<!--                     android:layout_below="@+id/foto" -->
+<!--                     android:layout_weight="1" -->
+<!--                     android:paddingRight="25dp" -->
+<!--                     android:paddingTop="15dip" -->
+<!--                     android:text="Date : 04-04-2012" -->
+<!--                     android:textSize="18sp" -->
+<!--                     android:typeface="serif" /> -->
+<!--             </LinearLayout> -->
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

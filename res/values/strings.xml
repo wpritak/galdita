@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Galdita_1.0</string>
+    <string name="desc">Gallery on the map</string>
+    <string name="caption">Edit caption here…</string>
+    <string name="balloon_item_title">balloon_item_title</string>
+    <string name="balloon_item_snippet">balloon_item_snippet</string>
+    <string name="nama_foto">Nama Foto Disini</string>
+    <string name="file_size">Beberapa MB</string>
+    <string name="taken">Taken on: </string>
+    <string name="file_date">15.55, 5 mei 1992</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Album_name">Album Name</string>
+    <string name="Album_cover">Add Album Cover</string>
+    <string name="Change_cover">Change Album Cover</string>
+    <string name="Album_desc">Album Description</string>
+    <string name="camera_button">Ambil Cuy</string>
+    <string name="input_query">Input Query Here&#8230;</string>
+    <string name="query_result">Query Result Here&#8230;</string>
+    <string name="album_name_hint">insert album name&#8230;</string>
+    <string name="album_desc_hint">insert description here&#8230;</string>
+    <string name="marker_prompt">Choose a marker</string>
+    <string name="marker_prompt2">Change marker</string>
+    <string-array name="markers_array">
+        <item>Yellow</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Grey</item>
+    </string-array>
+</resources>

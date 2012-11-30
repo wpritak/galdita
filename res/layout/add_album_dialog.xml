@@ -1,0 +1,132 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scoll1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/info_root"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical" >
+	
+	    <LinearLayout
+	        xmlns:android="http://schemas.android.com/apk/res/android"
+	        android:id="@+id/layout_root"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:paddingBottom="5dp"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp"
+	        android:paddingTop="5dp" >
+	
+	        <LinearLayout
+	            android:id="@+id/LinearLayout2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" >
+	
+	            <ImageView
+	                android:id="@+id/selectCover"
+	                android:layout_width="128dp"
+	                android:layout_height="128dp"
+	                android:layout_gravity="center_vertical"
+	                android:onClick="setCover"
+	                android:paddingRight="5dp"
+	                android:src="@drawable/cover" >
+	            </ImageView>
+	
+	            <TextView
+	                android:id="@+id/album_cover_text"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_horizontal"
+	                android:text="@string/Album_cover"
+	                android:textColor="#FFF" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/LinearLayout3"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:paddingLeft="5dp" >
+	
+	            <TextView
+	                android:id="@+id/album_name_text"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/Album_name"
+	                android:textColor="#FFF" />
+	
+	            <EditText
+	                android:id="@+id/album_name"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:hint="@string/album_name_hint"
+	                android:inputType="textCapWords"
+	                android:maxLength="20"
+	                android:maxLines="1" >
+	
+	                <requestFocus />
+	            </EditText>
+	
+	            <TextView
+	                android:id="@+id/album_desc_text"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/Album_desc"
+	                android:textColor="#FFF" />
+	
+	            <EditText
+	                android:id="@+id/album_desc"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:gravity="top"
+	                android:hint="@string/album_desc_hint"
+	                android:lines="2"
+	                android:maxLines="2"
+	                android:scrollHorizontally="true"
+	                android:scrollbars="vertical" />
+	        </LinearLayout>
+	        
+		    	
+	
+	    </LinearLayout>
+	        
+		<TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dip"
+	        android:text="@string/marker_prompt"
+	    />
+	    <Spinner 
+	        android:id="@+id/markerspinner"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:prompt="@string/marker_prompt"
+	    />
+	    
+	    <LinearLayout
+	        android:orientation="horizontal"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center" >
+		    
+		    <Button
+		     android:id="@+id/ok_button"
+		     android:layout_height="40dp"
+		     android:layout_width="70dp"
+		     android:text="OK"
+		     android:onClick="addAlbum" />
+		    
+		    <Button
+		     android:id="@+id/cancel_button"
+		     android:layout_height="40dp"
+		     android:layout_width="70dp"
+		     android:text="Cancel"
+		     android:onClick="cancelAdd"/>
+	    
+	    </LinearLayout>	
+	</LinearLayout>
+</ScrollView>

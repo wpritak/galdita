@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item type="id" name="balloon_inner_layout" />
+	<item type="id" name="balloon_inner_text" />
+	<item type="id" name="balloon_close" />
+</resources>

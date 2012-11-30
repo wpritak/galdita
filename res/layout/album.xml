@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/infotext"
+        android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical">
+        
+		<TextView
+		    android:id="@+id/albumname"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:maxLines="1" 
+    		android:ellipsize="marquee"
+		    android:padding="5dp" />
+	   
+	    <TextView
+	        android:id="@+id/albumloc"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:maxLines="1" 
+    		android:ellipsize="marquee"
+	        android:padding="5dp" />
+	    
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/buttons"
+    	android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    android:layout_below="@+id/infotext"
+	    android:layout_alignParentRight="true"
+	    android:gravity="center_vertical" >
+	        
+        <ImageButton
+		    android:id="@+id/add_from_cam_button"
+		    android:layout_width="80dp"
+		    android:layout_height="70dp"
+		    android:layout_marginBottom="5dp"
+		    android:layout_marginTop="5dp"
+		    android:scaleType="fitXY"
+		    android:src="@drawable/camera" />
+        
+	    <ImageButton 
+	        android:id="@+id/addItem"
+	        android:src="@drawable/add_item"
+	        android:layout_width="80dp"
+	       	android:layout_height="70dp"
+	       	android:layout_marginTop="5dp"
+	       	android:layout_marginBottom="5dp"
+	        android:scaleType="fitXY" />
+	
+	    <ImageButton
+	        android:id="@+id/deleteItem"
+	        android:layout_width="80dp"
+	        android:layout_height="70dp"
+	        android:layout_marginTop="5dp"
+	       	android:layout_marginBottom="5dp"
+	        android:scaleType="fitXY"
+	        android:src="@drawable/remove_item" />
+		
+<!-- 		<ImageButton -->
+<!-- 	        android:id="@+id/closeAlbum" -->
+<!-- 	        android:layout_width="80dp" -->
+<!-- 	        android:layout_height="70dp" -->
+<!-- 	        android:layout_marginTop="5dp" -->
+<!-- 	       	android:layout_marginBottom="5dp" -->
+<!-- 	        android:scaleType="fitXY" -->
+<!-- 	        android:src="@drawable/close" /> -->
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_toLeftOf="@+id/buttons"
+        android:layout_below="@+id/infotext"
+        android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" >
+		    
+	    <GridView
+	    	android:id="@+id/gridview"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+		    android:columnWidth="80dp"
+		    android:layout_margin="5dp"
+		    android:numColumns="auto_fit"
+		    android:stretchMode="columnWidth"
+		    android:horizontalSpacing="5dp"
+		    android:verticalSpacing="5dp"
+		    android:padding="1dp"
+		    android:gravity="center" />
+    </LinearLayout>  
+    
+</RelativeLayout>
