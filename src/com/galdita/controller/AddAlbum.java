@@ -26,7 +26,6 @@ import com.galdita.model.Album;
  * menambahkan album baru di peta
  * 
  * @author Rezky Ramadiansyah
- * @edited
  *
  */
 public class AddAlbum extends Activity {
@@ -49,6 +48,7 @@ public class AddAlbum extends Activity {
 	
 	//Objek editable text field 1
 	EditText e1;
+	EditText zz;
 	
 	//Objek editable text field 2
 	EditText e2;
