@@ -26,6 +26,7 @@ import com.galdita.model.Album;
  * menambahkan album baru di peta
  * 
  * @author Rezky Ramadiansyah
+ * @edited
  *
  */
 public class AddAlbum extends Activity {
