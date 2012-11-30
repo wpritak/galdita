@@ -48,7 +48,7 @@ public class AddAlbum extends Activity {
 	
 	//Objek editable text field 1
 	EditText e1;
-	EditText zz;
+	EditText TERE;
 	
 	//Objek editable text field 2
 	EditText e2;
