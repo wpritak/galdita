@@ -1,11 +1,13 @@
 package com.galdita.controller;
 
 import java.util.ArrayList;
-
 import com.galdita.R;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,6 +24,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * Class ItemsChooser
@@ -40,8 +43,10 @@ public class ItemChooser extends Activity {
 	public static final int HAPUS_ITEM = 1;
 	// konstanta yang menunjukkan mode ubah cover
 	public static final int UBAH_COVER = 2;
+	public static final int CONFIRM_DELETE = 3;
 	// arraylist untuk menyimpan path yang dipilih
 	ArrayList<Integer> itemSelected;
+	ArrayList<String> itemSelectedPaths;
 	// variabel count untuk menghitung jumlah item
 	private int count;
 	// array Bitmap untuk menyimpan thumbnails berupa bitmap
@@ -210,17 +215,22 @@ public class ItemChooser extends Activity {
 
 				Thread thread = new Thread(new Runnable() {
 					public void run() {
+						
 						if (mode == UBAH_COVER) {
 							if (thumbnailSelected != -1) {
 								AddAlbum.albumCover = itemPaths
 										.get(thumbnailSelected);
 							}
-						} else {
+						} 
+						
+						else {
 							int cnt = 0;
 							itemSelected = new ArrayList<Integer>();
+							itemSelectedPaths = new ArrayList<String>();
 							for (int i = 0; i < count; i++) {
 								if (thumbnailsselection[i]) {
 									itemSelected.add(itemsId[i]);
+									itemSelectedPaths.add(itemsPath[i]);
 									cnt++;
 								}
 							}
@@ -240,24 +250,47 @@ public class ItemChooser extends Activity {
 										c.close();
 
 									}
-								} else if (mode == HAPUS_ITEM) {
+								} else if (mode == CONFIRM_DELETE) {
+								
 									for (int i = 0; i < itemSelected.size(); i++) {
-										db.updateItemAlbumID(
-												itemSelected.get(i), 0);
-										Log.i("ItemChooser", "Delete = "
-												+ itemSelected);
-									}
 
+											db.updateItemAlbumID(
+													itemSelected.get(i), 0);
+											Log.i("ItemChooser", "Delete = "
+													+ itemSelected);
+									}
+									
 								}
-								db.close();
+								db.close();								
 							}
 						}
-						runOnUiThread(new Runnable() {
+						
+						ItemChooser.this.runOnUiThread(new Runnable() {
 							public void run() {
-								if (dialog.isShowing())
-									dialog.dismiss();
-								// Kembali ke album
-								finish();
+								if (mode == HAPUS_ITEM) {
+									AlertDialog.Builder builder = new AlertDialog.Builder(ItemChooser.this);
+									builder.setMessage("Are you sure you want to delete?")
+									.setCancelable(false)
+									.setPositiveButton("Yes",
+											new DialogInterface.OnClickListener() {
+												public void onClick(DialogInterface dialog,int which) {
+													delete();
+													finish();
+												}
+											})
+									.setNegativeButton("No", new DialogInterface.OnClickListener() {
+										public void onClick(DialogInterface dialog, int id) {
+											finish();
+										}
+									});
+									AlertDialog alert = builder.create();
+									alert.show();
+								}
+									if (dialog.isShowing())
+										dialog.dismiss();
+	//								// Kembali ke album
+									if (mode!= HAPUS_ITEM) finish();
+							
 							}
 						});
 					}
@@ -267,6 +300,17 @@ public class ItemChooser extends Activity {
 		});
 	}
 
+	private void delete () {
+		db.open();
+		for (int i = 0; i < itemSelected.size(); i++) {
+
+			db.updateItemAlbumID(
+					itemSelected.get(i), 0);
+			Log.i("ItemChooser", "Delete = "
+					+ itemSelected);
+		}
+		db.close();
+	}
 	/**
 	 * class ImageAdapter
 	 * 

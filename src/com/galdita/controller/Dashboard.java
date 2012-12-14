@@ -57,7 +57,7 @@ public class Dashboard extends MapActivity {
 	private CustomItemizedOverlay<Album> itemizedOverlay;
 
 	// Penampung sementara cover album
-	static String albumCover = "";
+	//public static String albumCover = "";
 
 	// Penampung lokasi long press
 	private GeoPoint location;

@@ -33,7 +33,7 @@ public class AddAlbum extends Activity {
 	DBGaldita db = new DBGaldita(this);
 	// Penampung sementara nama album
 	private String albumName = "Default";
-
+	
 	// Penampung sementara deskripsi album
 	private String albumDesc = "Default";
 	private String yola="";
@@ -42,7 +42,7 @@ public class AddAlbum extends Activity {
 	static String albumMarker = "Default";
 	
 	// Penampung sementara cover album
-	static String albumCover = "";
+	public static String albumCover = "";
 
 	// Penampung lokasi long press
 	private String location;
@@ -156,7 +156,7 @@ public class AddAlbum extends Activity {
 		}
 		cursor2.close();
 		db.close();
-		albumCover = "";//dinull kan lagi
+		//albumCover = "";//dinull kan lagi
 		finish();
 	}
 	
